@@ -1,0 +1,2 @@
+n_examples,exact_match,token_f1,has_ans_f1,no_ans_f1,citation_precision,citation_recall,citation_f1,citation_hit,grounded_accuracy,unsupported_answer_rate,abstention_rate,abstention_precision,abstention_recall,abstention_f1,latency_per_query_ms
+5,0.0,0.0,0.0,0.0,0.8,0.8,0.8,0.8,0.0,0.2,0.0,0.0,0.0,0.0,18.15811999986181

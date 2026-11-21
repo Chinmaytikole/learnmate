@@ -1,0 +1,14 @@
+# B2 — RAG + calibrated confidence abstention
+_base_: "default.yaml"
+
+experiment:
+  name: "b2_calibrated_confidence"
+  description: "B1 + Platt/isotonic calibration on retrieval sim + token log-prob features. No agreement signal."
+
+calibration:
+  method: "platt"
+  features:
+    - "top_retrieval_sim"
+    - "mean_token_logprob"
+    - "min_token_logprob"
+    - "answer_length"

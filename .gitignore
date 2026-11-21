@@ -1,0 +1,82 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# ── Virtual environments ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Python tooling / test caches ─────────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.hypothesis/
+
+# ── Data: never commit copyrighted / private material ───────────────────────
+data/raw/
+data/processed/
+data/splits/
+data/course/raw/
+data/course/processed/
+# But DO commit the split article lists and course eval CSV schema
+!data/splits/.gitkeep
+!data/course/.gitkeep
+
+# ── Model caches ─────────────────────────────────────────────────────────────
+.cache/
+.mpl_cache/
+*.pkl
+*.joblib
+*.faiss
+*.index
+embeddings_cache/
+hf_cache/
+transformers_cache/
+
+# ── Results ─ commit tables & figures, not raw predictions or logs ───────────
+results/logs/
+results/failure_cases/*.jsonl
+# But commit the CSVs and PNGs
+!results/tables/*.csv
+!results/figures/*.png
+
+# ── IDE / OS ─────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# ── Jupyter ──────────────────────────────────────────────────────────────────
+*.ipynb
+.ipynb_checkpoints/
+
+# ── Logs and local databases ─────────────────────────────────────────────────
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# ── Secrets ──────────────────────────────────────────────────────────────────
+*.env
+.env
+.env.*
+!.env.example
+secrets.yaml
+.streamlit/secrets.toml
+*.pem
+*.key

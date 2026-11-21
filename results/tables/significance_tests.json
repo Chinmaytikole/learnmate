@@ -1,0 +1,30 @@
+[
+  {
+    "comparison": "Proposed (+ NLI Agreement) vs B1 Standard RAG",
+    "n_paired": 2,
+    "mcnemar_statistic": 0.0,
+    "mcnemar_p_value": 1.0,
+    "mcnemar_n10_a_only": 0,
+    "mcnemar_n01_b_only": 0,
+    "unsupp_rate_diff_mean": 0.0,
+    "unsupp_rate_diff_ci_low": 0.0,
+    "unsupp_rate_diff_ci_high": 0.0,
+    "unsupp_rate_p_value": 1.0,
+    "token_f1_diff_mean": -15.384615384615383,
+    "token_f1_p_value": 0.52
+  },
+  {
+    "comparison": "Proposed (+ NLI Agreement) vs B2 Calibrated Confidence",
+    "n_paired": 2,
+    "mcnemar_statistic": 0.0,
+    "mcnemar_p_value": 1.0,
+    "mcnemar_n10_a_only": 0,
+    "mcnemar_n01_b_only": 0,
+    "unsupp_rate_diff_mean": 0.0,
+    "unsupp_rate_diff_ci_low": 0.0,
+    "unsupp_rate_diff_ci_high": 0.0,
+    "unsupp_rate_p_value": 1.0,
+    "token_f1_diff_mean": 0.0,
+    "token_f1_p_value": 1.0
+  }
+]

@@ -1,0 +1,6 @@
+Configuration,EM,F1,HasAns_F1,NoAns_F1,Unsupported_Rate,Abstention_Accuracy,Coverage,AURC,Cov_at_5pct,Cov_at_10pct,Threshold_Tau
+Proposed (All Features + Platt),0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.001001001001001001
+No Agreement (B2 Baseline),0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.001001001001001001
+Agreement Only (NLI Entailment),0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.001001001001001001
+Retrieval Sim Only,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.001001001001001001
+Uncalibrated Heuristic (0.5 Sim + 0.5 NLI),0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.8798798798798799

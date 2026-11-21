@@ -1,0 +1,2 @@
+n_examples,exact_match,token_f1,has_ans_f1,no_ans_f1,citation_precision,citation_recall,citation_f1,citation_hit,grounded_accuracy,unsupported_answer_rate,abstention_rate,abstention_precision,abstention_recall,abstention_f1,threshold_tau,target_risk,tune_empirical_risk,tune_empirical_coverage,features_used,aurc,coverage_at_5pct_risk,coverage_at_10pct_risk
+2,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.001001001001001001,0.05,0.0,0.0,"['top_retrieval_sim', 'mean_token_logprob', 'min_token_logprob', 'answer_length', 'agreement_score']",1.0,0.0,0.0

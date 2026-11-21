@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Ablation study on SQuAD 2.0 (tune split, target risk = 5\%). Lower Unsupported Rate and AURC indicate superior reliability and calibration.}
+\label{tab:ablation}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Configuration} & \textbf{EM (\%)} & \textbf{F1 (\%)} & \textbf{Unsupp. Rate $\downarrow$} & \textbf{AURC $\downarrow$} & \textbf{Cov@5\% $\uparrow$} & \textbf{Cov@10\% $\uparrow$} \\
+\midrule
+Proposed (All Features + Platt) & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+No Agreement (B2 Baseline) & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+Agreement Only (NLI Entailment) & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+Retrieval Sim Only & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+Uncalibrated Heuristic (0.5 Sim + 0.5 NLI) & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

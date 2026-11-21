@@ -1,0 +1,7 @@
+category,description,count,percentage
+nli_rescue,NLI Rescue (Baseline answered unsupportably/wrongly; Proposed correctly abstained),0,0.0
+false_answer_unanswerable,False Answer on Unanswerable Question (Hallucination / Failed Abstention),0,0.0
+unsupported_citation,"Unsupported Answer / Citation Miss (Answered, but failed to cite gold passage)",0,0.0
+false_abstention,False Abstention (Over-conservative refusal on an answerable question),2,100.0
+wrong_span_supported,"Extraction / Span Error (Gold passage cited, but answer token F1 < threshold)",0,0.0
+correct,"Grounded Correct (Accurate & supported answer, or proper abstention)",0,0.0

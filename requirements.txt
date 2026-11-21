@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# LearnMate — pinned requirements  (Python 3.10+)
+# Install: pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Core ML / retrieval ──────────────────────────────────────────────────────
+torch                       # GPU build auto-selected by pip on CUDA host
+torchvision
+torchaudio
+transformers
+sentence-transformers
+faiss-cpu                    # faiss-gpu has no Windows PyPI wheel; faiss-cpu works on CPU+GPU
+datasets
+accelerate
+huggingface-hub
+
+# ── Ollama Python client ─────────────────────────────────────────────────────
+ollama
+
+# ── Calibration / statistics ─────────────────────────────────────────────────
+scikit-learn
+scipy
+numpy
+pandas
+
+# ── Plotting ─────────────────────────────────────────────────────────────────
+matplotlib
+seaborn
+
+# ── NLP utilities ────────────────────────────────────────────────────────────
+nltk
+langdetect
+rouge-score
+
+# ── Document ingestion ───────────────────────────────────────────────────────
+pypdf
+python-docx
+python-pptx
+chardet
+
+# ── Config & logging ─────────────────────────────────────────────────────────
+pyyaml
+omegaconf
+rich
+tqdm
+loguru
+
+# ── CLI & utilities ──────────────────────────────────────────────────────────
+click
+jsonlines
+tabulate
+
+# ── Annotation / inter-rater ─────────────────────────────────────────────────
+statsmodels          # Cohen's kappa via statsmodels.stats.inter_rater
+
+# ── Demo UI ──────────────────────────────────────────────────────────────────
+streamlit
+streamlit-extras
+
+# ── Testing ──────────────────────────────────────────────────────────────────
+pytest
+pytest-cov
+
+# ── Reproducibility ──────────────────────────────────────────────────────────
+GitPython

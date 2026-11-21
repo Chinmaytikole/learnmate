@@ -1,0 +1,15 @@
+# B1 — Standard RAG (no abstention beyond generator NO_ANSWER)
+# Inherits all defaults from configs/default.yaml
+
+_base_: "default.yaml"
+
+experiment:
+  name: "b1_standard_rag"
+  description: "Retriever + Generator + citations. No calibrated abstention."
+
+generator:
+  model: "llama3.2:3b"
+  temperature: 0.0
+
+retriever:
+  top_k: 5

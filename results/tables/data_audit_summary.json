@@ -1,0 +1,256 @@
+{
+  "audit": {
+    "train": {
+      "article_count": 354,
+      "passage_count": 15047,
+      "total_questions": 102698,
+      "answerable_count": 68147,
+      "answerable_pct": 66.35669633293735,
+      "unanswerable_count": 34551,
+      "unanswerable_pct": 33.64330366706265,
+      "question_types": {
+        "what": 47220,
+        "in": 5203,
+        "other": 14100,
+        "where": 3684,
+        "when": 6214,
+        "how": 9295,
+        "who": 9910,
+        "which": 4538,
+        "is/are/was/were": 476,
+        "why": 1457,
+        "name": 140,
+        "did/do/does": 381,
+        "can/could": 80
+      },
+      "answer_length_stats": {
+        "count": 68147,
+        "mean": 3.3218483572277577,
+        "median": 2.0,
+        "std": 3.4966886767019907,
+        "min": 0.0,
+        "max": 43.0,
+        "iqr": 3.0
+      },
+      "passage_length_stats": {
+        "count": 15047,
+        "mean": 119.14162291486674,
+        "median": 110.0,
+        "std": 51.08525237944044,
+        "min": 20.0,
+        "max": 677.0,
+        "iqr": 54.0
+      }
+    },
+    "calib": {
+      "article_count": 44,
+      "passage_count": 2072,
+      "total_questions": 14372,
+      "answerable_count": 9787,
+      "answerable_pct": 68.09768995268578,
+      "unanswerable_count": 4585,
+      "unanswerable_pct": 31.90231004731422,
+      "question_types": {
+        "when": 801,
+        "what": 6191,
+        "in": 795,
+        "who": 1357,
+        "how": 1111,
+        "other": 2635,
+        "which": 771,
+        "where": 434,
+        "why": 140,
+        "is/are/was/were": 79,
+        "did/do/does": 40,
+        "name": 13,
+        "can/could": 5
+      },
+      "answer_length_stats": {
+        "count": 9787,
+        "mean": 3.013282926330847,
+        "median": 2.0,
+        "std": 3.1031165133771323,
+        "min": 1.0,
+        "max": 27.0,
+        "iqr": 2.0
+      },
+      "passage_length_stats": {
+        "count": 2072,
+        "mean": 117.56129343629344,
+        "median": 108.0,
+        "std": 51.30733075361272,
+        "min": 22.0,
+        "max": 416.0,
+        "iqr": 54.0
+      }
+    },
+    "tune": {
+      "article_count": 44,
+      "passage_count": 1910,
+      "total_questions": 13249,
+      "answerable_count": 8887,
+      "answerable_pct": 67.07676051022719,
+      "unanswerable_count": 4362,
+      "unanswerable_pct": 32.92323948977282,
+      "question_types": {
+        "which": 412,
+        "who": 1396,
+        "what": 6199,
+        "how": 1228,
+        "in": 543,
+        "other": 1654,
+        "when": 857,
+        "where": 613,
+        "did/do/does": 28,
+        "why": 271,
+        "is/are/was/were": 33,
+        "can/could": 1,
+        "name": 14
+      },
+      "answer_length_stats": {
+        "count": 8887,
+        "mean": 3.3559131315404525,
+        "median": 2.0,
+        "std": 3.4849779179589957,
+        "min": 0.0,
+        "max": 30.0,
+        "iqr": 3.0
+      },
+      "passage_length_stats": {
+        "count": 1910,
+        "mean": 124.58900523560209,
+        "median": 114.0,
+        "std": 48.13062706130171,
+        "min": 20.0,
+        "max": 518.0,
+        "iqr": 53.0
+      }
+    },
+    "dev": {
+      "article_count": 35,
+      "passage_count": 1204,
+      "total_questions": 11873,
+      "answerable_count": 5928,
+      "answerable_pct": 49.92840899519919,
+      "unanswerable_count": 5945,
+      "unanswerable_pct": 50.07159100480081,
+      "question_types": {
+        "in": 517,
+        "when": 736,
+        "other": 1643,
+        "who": 993,
+        "what": 5826,
+        "where": 430,
+        "how": 1133,
+        "is/are/was/were": 35,
+        "which": 336,
+        "can/could": 10,
+        "did/do/does": 18,
+        "why": 187,
+        "name": 9
+      },
+      "answer_length_stats": {
+        "count": 20302,
+        "mean": 3.178750861984041,
+        "median": 2.0,
+        "std": 3.140930976692698,
+        "min": 0.0,
+        "max": 30.0,
+        "iqr": 3.0
+      },
+      "passage_length_stats": {
+        "count": 1204,
+        "mean": 129.3388704318937,
+        "median": 115.0,
+        "std": 58.250944560974034,
+        "min": 26.0,
+        "max": 634.0,
+        "iqr": 55.0
+      }
+    }
+  },
+  "leakage": {
+    "passed": true,
+    "details": [
+      {
+        "check": "Article overlap (train vs calib)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "Article overlap (train vs tune)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "Article overlap (calib vs tune)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "Article overlap (train vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "Article overlap (calib vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "Article overlap (tune vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (train vs calib)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (train vs tune)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (train vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (calib vs tune)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (calib vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      },
+      {
+        "check": "QID overlap (tune vs dev)",
+        "passed": true,
+        "overlap_count": 0,
+        "overlap_items": []
+      }
+    ]
+  },
+  "limitations": [
+    "Domain Bias: SQuAD 2.0 covers Wikipedia articles only, which are encyclopedic, dense, and third-person, differing from conversational or pedagogical course materials.",
+    "Adversarial Unanswerable Design: Negatives were crowdsourced by Workers looking at passages to write similar-sounding unanswerable questions; models can exploit lexical artifact cues.",
+    "Reference Redundancy: Training examples contain exactly 1 reference answer, whereas dev examples contain ~3 plausible reference spans.",
+    "Retrieval Gold Standard: No separate human-annotated retrieval ground truth exists; the context paragraph hosting the QA pair is used as the silver gold-standard passage.",
+    "Course Evaluation Generalizability: The course evaluation set is instructor-specific, smaller in scale, and LLM-synthesized before human blind annotation."
+  ]
+}

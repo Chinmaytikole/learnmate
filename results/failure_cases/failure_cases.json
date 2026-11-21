@@ -1,0 +1,44 @@
+{
+  "false_abstention": [
+    {
+      "qid": "56cdaf0362d2951400fa6808",
+      "category": "false_abstention",
+      "question": "Which company made Spectre?",
+      "prediction": "NO_ANSWER",
+      "gold_answers": [
+        "Eon Productions"
+      ],
+      "is_answerable": true,
+      "is_abstained": true,
+      "gold_passage_id": "63b0ca14faff30af",
+      "cited_passage_ids": [
+        "63b0ca14faff30af"
+      ],
+      "top_retrieval_score": 0.7592434883117676,
+      "agreement_score": 1.0,
+      "confidence": 0.0,
+      "diagnosis": "Over-conservative abstention on answerable question despite retrieved context.",
+      "baseline_prediction": "NO_ANSWER"
+    },
+    {
+      "qid": "56cdaf0362d2951400fa6809",
+      "category": "false_abstention",
+      "question": "Who is the star of Spectre?",
+      "prediction": "NO_ANSWER",
+      "gold_answers": [
+        "Daniel Craig"
+      ],
+      "is_answerable": true,
+      "is_abstained": true,
+      "gold_passage_id": "63b0ca14faff30af",
+      "cited_passage_ids": [
+        "63b0ca14faff30af"
+      ],
+      "top_retrieval_score": 0.749424934387207,
+      "agreement_score": 1.0,
+      "confidence": 0.0,
+      "diagnosis": "Over-conservative abstention on answerable question despite retrieved context.",
+      "baseline_prediction": "NO_ANSWER"
+    }
+  ]
+}

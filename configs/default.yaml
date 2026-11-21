@@ -1,0 +1,100 @@
+# LearnMate — Default Configuration
+# All experiment configs inherit from this file and override only what differs.
+# Keys marked [LOCKED] must never be changed after splits are created.
+
+project:
+  name: "LearnMate"
+  version: "0.1.0"
+  group: "G06"
+  seed: 42                          # [LOCKED] global random seed
+
+paths:
+  data_raw:           "data/raw"
+  data_processed:     "data/processed"
+  data_splits:        "data/splits"
+  course_raw:         "data/course/raw"
+  course_processed:   "data/course/processed"
+  course_eval:        "data/course/eval.csv"
+  results:            "results"
+  tables:             "results/tables"
+  figures:            "results/figures"
+  logs:               "results/logs"
+  failure_cases:      "results/failure_cases"
+  cache:              ".cache"
+
+squad:
+  hf_dataset:         "rajpurkar/squad_v2"
+  train_file:         "data/raw/train-v2.0.json"
+  dev_file:           "data/raw/dev-v2.0.json"
+  # [LOCKED] article-level split ratios for the official TRAIN set
+  train_ratio:        0.80
+  calib_ratio:        0.10
+  tune_ratio:         0.10
+  split_seed:         42            # [LOCKED]
+  article_lists:
+    train:            "data/splits/squad_train_articles.txt"
+    calib:            "data/splits/squad_calib_articles.txt"
+    tune:             "data/splits/squad_tune_articles.txt"
+
+retriever:
+  model:              "BAAI/bge-base-en-v1.5"
+  top_k:              5
+  batch_size:         128
+  normalize_embeddings: true
+  index_type:         "Flat"        # "Flat" or "IVF" for large corpora
+  cache_embeddings:   true
+
+generator:
+  runtime:            "ollama"
+  model:              "llama3.2:3b"
+  question_gen_model: "llama3.1:8b" # different model — used only in scripts/
+  temperature:        0.0
+  max_tokens:         512
+  system_prompt: |
+    You are a precise question-answering assistant.
+    Answer ONLY using the provided passages.
+    If the passages do not contain a clear answer, return NO_ANSWER.
+    Always respond with valid JSON matching this schema:
+    {"answer": "<short answer or NO_ANSWER>", "cited_passage_ids": [<list of int ids>]}
+
+extractive_qa:
+  model:              "deepset/deberta-v3-base-squad2"
+  batch_size:         16
+  max_seq_length:     512
+  # Published dev F1 target for sanity check
+  expected_dev_f1:    90.4
+
+agreement:
+  model:              "cross-encoder/nli-deberta-v3-small"
+  batch_size:         32
+  # Label map: 0=contradiction, 1=neutral, 2=entailment
+  entailment_idx:     2
+
+calibration:
+  method:             "platt"       # "platt" or "isotonic"
+  fit_split:          "calib"       # must be "calib" — NEVER "tune" or "dev"
+  threshold_split:    "tune"        # must be "tune"  — NEVER "dev"
+  # Coverage targets for threshold selection
+  target_risks:       [0.05, 0.10]
+
+chunking:
+  min_words:          150
+  max_words:          250
+  overlap_words:      30
+  respect_headings:   true
+
+evaluation:
+  bootstrap_n:        1000
+  bootstrap_seed:     42
+  squad_eval_script:  "scripts/squad_eval.py"
+  token_f1_threshold: 0.5           # min F1 to count as correct
+
+logging:
+  level:              "INFO"
+  format:             "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
+  save_predictions:   true          # always save raw JSONL predictions
+
+hardware:
+  # Will be auto-detected at runtime; set here to override
+  device:             "auto"        # "auto", "cuda", "cpu"
+  faiss_use_gpu:      true

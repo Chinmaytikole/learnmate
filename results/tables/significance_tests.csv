@@ -1,0 +1,3 @@
+comparison,n_paired,mcnemar_statistic,mcnemar_p_value,mcnemar_n10_a_only,mcnemar_n01_b_only,unsupp_rate_diff_mean,unsupp_rate_diff_ci_low,unsupp_rate_diff_ci_high,unsupp_rate_p_value,token_f1_diff_mean,token_f1_p_value
+Proposed (+ NLI Agreement) vs B1 Standard RAG,2,0.0,1.0,0,0,0.0,0.0,0.0,1.0,-15.384615384615383,0.52
+Proposed (+ NLI Agreement) vs B2 Calibrated Confidence,2,0.0,1.0,0,0,0.0,0.0,0.0,1.0,0.0,1.0

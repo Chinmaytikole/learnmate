@@ -1,0 +1,31 @@
+{
+  "n_examples": 2,
+  "exact_match": 0.0,
+  "token_f1": 0.0,
+  "has_ans_f1": 0.0,
+  "no_ans_f1": 0.0,
+  "citation_precision": 1.0,
+  "citation_recall": 1.0,
+  "citation_f1": 1.0,
+  "citation_hit": 1.0,
+  "grounded_accuracy": 0.0,
+  "unsupported_answer_rate": 0.0,
+  "abstention_rate": 1.0,
+  "abstention_precision": 0.0,
+  "abstention_recall": 0.0,
+  "abstention_f1": 0.0,
+  "threshold_tau": 0.001001001001001001,
+  "target_risk": 0.05,
+  "tune_empirical_risk": 0.0,
+  "tune_empirical_coverage": 0.0,
+  "features_used": [
+    "top_retrieval_sim",
+    "mean_token_logprob",
+    "min_token_logprob",
+    "answer_length",
+    "agreement_score"
+  ],
+  "aurc": 1.0,
+  "coverage_at_5pct_risk": 0.0,
+  "coverage_at_10pct_risk": 0.0
+}

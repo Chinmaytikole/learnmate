@@ -1,0 +1,153 @@
+{
+  "timestamp_utc": "2026-11-15T08:11:44.894347+00:00",
+  "git_commit": "unknown",
+  "python_version": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "package_versions": {
+    "torch": "2.15.0",
+    "transformers": "5.22.0",
+    "sentence-transformers": "6.2.0",
+    "faiss-gpu": "not installed",
+    "faiss-cpu": "1.16.0",
+    "datasets": "5.1.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "ollama": "0.6.3",
+    "streamlit": "1.66.1",
+    "omegaconf": "2.4.0"
+  },
+  "gpu_info": {
+    "available": false
+  },
+  "config": {
+    "project": {
+      "name": "LearnMate",
+      "version": "0.1.0",
+      "group": "G06",
+      "seed": 42
+    },
+    "paths": {
+      "data_raw": "data/raw",
+      "data_processed": "data/processed",
+      "data_splits": "data/splits",
+      "course_raw": "data/course/raw",
+      "course_processed": "data/course/processed",
+      "course_eval": "data/course/eval.csv",
+      "results": "results",
+      "tables": "results/tables",
+      "figures": "results/figures",
+      "logs": "results/logs",
+      "failure_cases": "results/failure_cases",
+      "cache": ".cache"
+    },
+    "squad": {
+      "hf_dataset": "rajpurkar/squad_v2",
+      "train_file": "data/raw/train-v2.0.json",
+      "dev_file": "data/raw/dev-v2.0.json",
+      "train_ratio": 0.8,
+      "calib_ratio": 0.1,
+      "tune_ratio": 0.1,
+      "split_seed": 42,
+      "article_lists": {
+        "train": "data/splits/squad_train_articles.txt",
+        "calib": "data/splits/squad_calib_articles.txt",
+        "tune": "data/splits/squad_tune_articles.txt"
+      }
+    },
+    "retriever": {
+      "model": "BAAI/bge-base-en-v1.5",
+      "top_k": 5,
+      "batch_size": 128,
+      "normalize_embeddings": true,
+      "index_type": "Flat",
+      "cache_embeddings": true
+    },
+    "generator": {
+      "runtime": "ollama",
+      "model": "llama3.2:3b",
+      "question_gen_model": "llama3.1:8b",
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "system_prompt": "You are a precise question-answering assistant.\nAnswer ONLY using the provided passages.\nIf the passages do not contain a clear answer, return NO_ANSWER.\nAlways respond with valid JSON matching this schema:\n{\"answer\": \"<short answer or NO_ANSWER>\", \"cited_passage_ids\": [<list of int ids>]}\n"
+    },
+    "extractive_qa": {
+      "model": "deepset/deberta-v3-base-squad2",
+      "batch_size": 16,
+      "max_seq_length": 512,
+      "expected_dev_f1": 90.4
+    },
+    "agreement": {
+      "model": "cross-encoder/nli-deberta-v3-small",
+      "batch_size": 32,
+      "entailment_idx": 2
+    },
+    "calibration": {
+      "method": "platt",
+      "fit_split": "calib",
+      "threshold_split": "tune",
+      "target_risks": [
+        0.05,
+        0.1
+      ],
+      "features": [
+        "top_retrieval_sim",
+        "mean_token_logprob",
+        "min_token_logprob",
+        "answer_length",
+        "agreement_score"
+      ]
+    },
+    "chunking": {
+      "min_words": 150,
+      "max_words": 250,
+      "overlap_words": 30,
+      "respect_headings": true
+    },
+    "evaluation": {
+      "bootstrap_n": 1000,
+      "bootstrap_seed": 42,
+      "squad_eval_script": "scripts/squad_eval.py",
+      "token_f1_threshold": 0.5
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "%(asctime)s | %(name)s | %(levelname)s | %(message)s",
+      "save_predictions": true
+    },
+    "hardware": {
+      "device": "auto",
+      "faiss_use_gpu": true
+    },
+    "experiment": {
+      "name": "proposed_agreement_abstention",
+      "description": "B2 features PLUS evidence-agreement NLI score. Same calibration/threshold procedure as B2."
+    }
+  },
+  "phase": 10,
+  "eval_split": "tune",
+  "n_examples": 2,
+  "is_smoke_or_mock_warning": true,
+  "systems_included": [
+    "B1 Standard RAG",
+    "B2 Calibrated Confidence",
+    "Proposed (+ NLI Agreement)"
+  ],
+  "config_sha256": {
+    "b1_standard_rag.yaml": "16515e58121d0e7069233d28410c7c81d7938f68cfb89e2e3b340c9bb8d978da",
+    "b2_calibrated_confidence.yaml": "7139d94ce58616500ac6d94f073709401c3132d3906c8ec8df8c143d64dab6d4",
+    "default.yaml": "eae010ba0ac36c70187c3e1f8ddb312bd2bee7fa76566949d46b282104198e65",
+    "proposed.yaml": "99c153cab78924910ad7757f7090002034554af024301fe19d889790da7a9572"
+  },
+  "split_leakage_audit_present": true,
+  "artifacts": {
+    "main_results_csv": "results\\tables\\main_results_table.csv",
+    "main_results_tex": "results\\tables\\main_results_table.tex",
+    "significance_tests_json": "results\\tables\\significance_tests.json",
+    "risk_coverage_figure": "results\\figures\\main_risk_coverage.png",
+    "reliability_figure": "results\\figures\\reliability_before_after.png",
+    "failure_gallery_md": "results\\failure_cases\\failure_gallery.md",
+    "failure_cases_json": "results\\failure_cases\\failure_cases.json",
+    "failure_taxonomy_csv": "results\\failure_cases\\failure_taxonomy_summary.csv"
+  }
+}

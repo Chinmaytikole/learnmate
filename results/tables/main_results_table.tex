@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering
+\caption{Main comparison on SQuAD 2.0 (tune split, N=2) (SMOKE/MOCK DATA -- NOT FOR PAPER). Lower Unsupported-Answer Rate, AURC, and ECE indicate stronger grounding and calibration.}
+\label{tab:main_results}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{System} & \textbf{EM (\%)} & \textbf{F1 (\%)} & \textbf{Cov. (\%)} & \textbf{Unsupp. $\downarrow$} & \textbf{AURC $\downarrow$} & \textbf{Cov@5\% $\uparrow$} & \textbf{ECE $\downarrow$} \\
+\midrule
+B1 Standard RAG & 0.0 & 15.4 & 100.0 & 0.000 & 1.000 & 0.000 & 0.754 \\
+B2 Calibrated Confidence & 0.0 & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+Proposed (+ NLI Agreement) & 0.0 & 0.0 & 0.0 & 0.000 & 1.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

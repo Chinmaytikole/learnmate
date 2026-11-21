@@ -1,0 +1,18 @@
+{
+  "n_examples": 2,
+  "exact_match": 0.0,
+  "token_f1": 15.384615384615385,
+  "has_ans_f1": 15.384615384615385,
+  "no_ans_f1": 0.0,
+  "citation_precision": 1.0,
+  "citation_recall": 1.0,
+  "citation_f1": 1.0,
+  "citation_hit": 1.0,
+  "grounded_accuracy": 0.0,
+  "unsupported_answer_rate": 0.0,
+  "abstention_rate": 0.0,
+  "abstention_precision": 0.0,
+  "abstention_recall": 0.0,
+  "abstention_f1": 0.0,
+  "latency_per_query_ms": 24.45345000000998
+}
